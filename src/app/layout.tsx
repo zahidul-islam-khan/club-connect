@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from '@/components/Providers'
 import Navigation from '@/components/Navigation'
+import BackgroundWrapper from '@/components/BackgroundWrapper'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,10 +37,12 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased min-h-screen`}
       >
         <Providers>
-          <Navigation />
-          <main className="pb-4">
-            {children}
-          </main>
+          <BackgroundWrapper>
+            <Navigation />
+            <main className="pb-4">
+              {children}
+            </main>
+          </BackgroundWrapper>
         </Providers>
       </body>
     </html>
